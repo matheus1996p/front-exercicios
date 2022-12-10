@@ -1,15 +1,132 @@
 <div class="header">
   <h2>Selecione o Exercício</h2>
-  <br>
 </div>
-
 <div class="body">
-  <div class="row">
-    <div class="col-md-6">
-      testers
-    </div>
-    <div class="col-md-6">
-      testers 2
-    </div>
-  </div>
+    <p-accordion>
+      <p-accordionTab header="Exercício 1">
+        <div class="row">
+          <p><b>1) Votos em relação ao total de eleitores</b></p>
+          <p>Faça uma classe com 3 métodos que calculam...</p>
+          <p>- O percentual do votos válidos em relação ao total de eleitores;</p>
+          <p>- O percentual do votos brancos em relação ao total de eleitores;</p>
+          <p>- O percentual do votos nulos em relação ao total de eleitores;</p>
+        </div>
+        <div class="row buttons">
+          <button pButton pRipple type="button" label="Ir para resolução" class="p-button-raised"></button>
+        </div>
+      </p-accordionTab>
+      <p-accordionTab header="Exercício 2">
+        <div class="row">
+          <p><b>2) Algoritmo de ordenação Bubble Sort</b></p>
+          <p>Imagine o seguinte vetor.</p>
+          <p>v = 5, 3, 2, 4, 7, 1, 0, 6</p>
+          <p>Faça um algoritmo que ordene o vetor acima utilizando o <b>Bubble Sort</b></p>
+          <p>O Bubble Sort ordena de par em par. Ele pega os dois primeiros elementos e pergunta se o primeiro é maior que
+            o segundo. Se sim, os elementos são trocados (swap). se não, são mantidos. Vai repetindo o processo até o final do vetor.
+          </p>
+          <p>Obviamente que ele não consegue ordenar todo o vetor em uma única rodada, ele terá que passar pelo vetor um certo número de vezes.</p>
+          <p>De maneira mais formal podemos destacar:</p>
+          <p>1. Percorra o vetor inteiro comparando elementos adjacentes (dois a dois)</p>
+          <p>2. Troque as posições dos elementos se eles estiverem fora de ordem</p>
+          <p>3. Repita os dois passos acima (n-1) vezes, onde n é igual ao tamanho do vetor</p>
+        </div>
+        <div class="row buttons">
+          <button pButton pRipple type="button" label="Ir para resolução" class="p-button-raised"></button>
+        </div>
+      </p-accordionTab>
+      <p-accordionTab header="Exercício 3">
+        <div class="row">
+          <p><b>3) Fatorial</b></p>
+          <p>Faça um programa que calcule o fatorial de um número qualquer</p>
+          <p>Vamos lembrar o que é o fatorial?</p>
+          <p>Seja n um número natural, tal que n >= 2, chama-se fatorial de n o produto de todos os números naturais consecutivos de n até 1.</p>
+          <p>Por exemplo,</p>
+          <p>5! = 1 x 2 x 3 x 4 x 5 = 120</p>
+          <p>Veja mais alguns resultados e que você poderá utilizar como testes:</p>
+          <p>0! = 1</p>
+          <p>1! = 1</p>
+          <p>2! = 2</p>
+          <p>3! = 6</p>
+          <p>4! = 24</p>
+          <p>5! = 120</p>
+          <p>6! = 720</p>
+        </div>
+        <div class="row buttons">
+          <button pButton pRipple type="button" label="Ir para resolução" class="p-button-raised"></button>
+        </div>
+      </p-accordionTab>
+      <p-accordionTab header="Exercício 4">
+        <div class="row">
+          <p><b>4) Soma dos multiplos de 3 ou 5</b></p>
+          <p>Fazer uma implementação que faça a soma de todos os números que sejam multiplos de 3 ou 5.</p>
+          <p>Se listar todos os números naturaris abaixo de 10 que são múltiplos de 3 ou 5, ficamos com 3,5,6 e 9. A soma desses múltiplos é de 23.</p>
+          <p>A implementação deve ser capaz de receber por parametro um número X se ja retornado a soma de todos os números múltiplos de 3 ou 5.</p>
+        </div>
+        <div class="row buttons">
+          <button pButton pRipple type="button" label="Ir para resolução" class="p-button-raised"></button>
+        </div>
+      </p-accordionTab>
+      <p-accordionTab header="Exercício 5">
+        <div class="row">
+          <p><b>5) Soma dos multiplos de 3 ou 5</b></p>
+          <p>Criar uma aplicação back-end (Java ou NodeJS) baseada em web services usando JSON.</p>
+          <p>Deverá haver um front-end em modo Single Page Application que se comunique com os serviços criados no back-end</p>
+          <p><b>Rquisitos:</b></p>
+          <p> - Permitir o cadastro de veículos</p>
+          <p> - Permitir a atualização de dados de um veículo</p>
+          <p> - Permitir a exclusão de um veículo</p>
+          <p> - Exibir a informação de quantos veículos estão como não vendidos na base.</p>
+          <p> - Exibir a informação de distribuição de veículos por década de fabricação</p>
+          <p>Exemplo:</p>
+          <p>Década 1990 -> 15 veículos</p>
+          <p>Década 2000 -> 31 veículos</p>
+          <p> - Exibir a informação da distribuição de veículos por fabricante.</p>
+          <p>Exemplo:</p>
+          <p>Ford  -> 14 veículos</p>
+          <p>Honda -> 8 veículos</p>
+          <p> - Exibir os carros registrados durante a última semana.</p>
+          <p> - Deverá haver consistência das marcas fornecidas. Não poderá haver marcas escritas de forma errada (Exemplo: Volksvagen, Forde,
+            Xevrolé, etc. Não serão aceitos no cadastro)
+          </p>
+          <p><b>Missão</b></p>
+          <p> Desenvolver uma API JSON RESTful, que utilize todos os métodos (GET, POST, PUT, PATCH, DELETE).</p>
+          <p>Faça o teste unitário da API</p>
+          <p><b>Especificação</b></p>
+          <p>Monte uma base de veículo com a seguinte estrutura:</p>
+          <div style="background-color: rgba(250, 250, 250, 0.904); padding-top: 5px; width: 30%; margin-bottom: 3%;">
+            <p>veiculo: string</p>
+            <p>marca: string</p>
+            <p>ano: integer</p>
+            <p>descricao: text</p>
+            <p>vendido: bool</p>
+            <p>created: datetime</p>
+            <p>updated: datetime</p>
+          </div>
+          <p><b>API endpoints</b></p>
+          <p>GET /veiculos</p>
+          <p>Retorna todos os veículos</p>
+          <hr>
+          <p>GET /veiculos?marca=marca&ano=ano&cor=cor</p>
+          <p>Retorna todos os veículos de acordo com os parâmetros passados.</p>
+          <hr>
+          <p>GET /veiculos/id</p>
+          <p>Retorna os detalhes do veículos</p>
+          <hr>
+          <p>POST /veiculos</p>
+          <p>Adiciona um novo veículo</p>
+          <hr>
+          <p>PUT /veiculos/id</p>
+          <p>Atualiza os dados de um veículo</p>
+          <hr>
+          <p>PATCH /veiculos/id</p>
+          <p>Atualiza apenas alguns dados do veículo</p>
+          <hr>
+          <p>DELETE /veiculos/id</p>
+          <p>Apaga o veículo</p>
+        </div>
+        <div class="row buttons">
+          <button pButton pRipple type="button" label="Ir para resolução" class="p-button-raised"></button>
+        </div>
+      </p-accordionTab>
+  </p-accordion>
 </div>
