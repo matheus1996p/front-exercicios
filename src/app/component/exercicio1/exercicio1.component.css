@@ -21,6 +21,11 @@
   font-weight: bold;
 }
 
+.resultado {
+  color: rgb(4, 129, 0);
+  margin: 1%;
+}
+
 /* .buttons {
   margin-top: 2%;
   margin-bottom: 2%;

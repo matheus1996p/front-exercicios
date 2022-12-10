@@ -23,18 +23,18 @@
 
     <div class="buttons row">
       <div class="col-md-4" align="center">
-        <button [routerLink]="['/exercicio1']" pButton pRipple type="button" label="Votos válidos" class="p-button-raised  p-button-secondary"></button>
+        <button (click)="calcularVotosValidos()" pButton pRipple type="button" label="Votos válidos" class="p-button-raised  p-button-secondary"></button>
       </div>
       <div class="col-md-4" align="center">
-        <button [routerLink]="['/exercicio1']" pButton pRipple type="button" label="Votos brancos" class="p-button-raised  p-button-secondary"></button>
+        <button (click)="calcularVotosBrancos()" pButton pRipple type="button" label="Votos brancos" class="p-button-raised  p-button-secondary"></button>
       </div>
       <div class="col-md-4" align="center">
-        <button [routerLink]="['/exercicio1']" pButton pRipple type="button" label="Votos nulos" class="p-button-raised  p-button-secondary"></button>
+        <button (click)="calcularVotosNulos()" pButton pRipple type="button" label="Votos nulos" class="p-button-raised  p-button-secondary"></button>
       </div>
     </div>
 
     <div class="row" align="center" style="margin-top: 3%">
-        <h2><b>Resultado:</b>{{resultado}}</h2>
+        <h2><b>Resultado:</b> <span class="resultado">{{resultado}}</span></h2>
     </div>
 
     <div class="row">
