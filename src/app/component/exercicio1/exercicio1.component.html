@@ -1,0 +1,44 @@
+<div class="header">
+  <h2>Exercício 1</h2>
+</div>
+<div class="body">
+  <mat-card style="width: 50%; left: 25%;">
+    <div class="form form-group">
+      <label for="totalEleitores">Total de eleitores</label>
+      <input type="number" [(ngModel)]="totalEleitores"  class="form-control" id="totalEleitores" placeholder="Informe o total de eleitores">
+    </div>
+    <div class="form form-group">
+      <label for="votosValidos">Votos válidos</label>
+      <input type="number" [(ngModel)]="votosValidos"  class="form-control" id="votosValidos" placeholder="Informe o total de eleitores">
+    </div>
+    <div class="form form-group">
+      <label for="votosNulos">Votos nulos</label>
+      <input type="number" [(ngModel)]="votosNulos"  class="form-control" id="votosNulos" placeholder="Informe o total de eleitores">
+    </div>
+
+    <div class="form form-group">
+      <label for="votosBrancos">Votos brancos</label>
+      <input type="number" [(ngModel)]="votosBrancos"  class="form-control" id="votosBrancos" placeholder="Informe o total de eleitores">
+    </div>
+
+    <div class="buttons row">
+      <div class="col-md-4" align="center">
+        <button [routerLink]="['/exercicio1']" pButton pRipple type="button" label="Votos válidos" class="p-button-raised  p-button-secondary"></button>
+      </div>
+      <div class="col-md-4" align="center">
+        <button [routerLink]="['/exercicio1']" pButton pRipple type="button" label="Votos brancos" class="p-button-raised  p-button-secondary"></button>
+      </div>
+      <div class="col-md-4" align="center">
+        <button [routerLink]="['/exercicio1']" pButton pRipple type="button" label="Votos nulos" class="p-button-raised  p-button-secondary"></button>
+      </div>
+    </div>
+
+    <div class="row" align="center" style="margin-top: 3%">
+        <h2><b>Resultado:</b>{{resultado}}</h2>
+    </div>
+
+    <div class="row">
+      <button [routerLink]="['']" pButton pRipple type="button" label="Voltar para o Menu" class="p-button-text"></button>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,29 @@
+.header{
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.body {
+  margin-top: 2%;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.form {
+  margin: 1%;
+}
+
+.form label {
+  font-weight: bold;
+}
+
+/* .buttons {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 10%;
+  margin-left: 10%;
+} */

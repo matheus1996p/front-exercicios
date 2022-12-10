@@ -1,3 +1,4 @@
+import { Exercicio1Component } from './component/exercicio1/exercicio1.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { VeiculosComponent } from './component/veiculos/veiculos.component';
 import { NgModule } from '@angular/core';
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: '',
     component: MenuComponent
+  },
+  {
+    path: 'exercicio1',
+    component: Exercicio1Component
   }
 ];
 
