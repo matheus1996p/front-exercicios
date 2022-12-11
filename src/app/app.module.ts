@@ -19,7 +19,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import { Exercicio2Component } from './component/exercicio2/exercicio2.component';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { Exercicio3Component } from './component/exercicio3/exercicio3.component'
+import { Exercicio3Component } from './component/exercicio3/exercicio3.component';
+import { Exercicio4Component } from './component/exercicio4/exercicio4.component'
 
 export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
 
@@ -31,7 +32,8 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     MenuComponent,
     Exercicio1Component,
     Exercicio2Component,
-    Exercicio3Component
+    Exercicio3Component,
+    Exercicio4Component
   ],
   imports: [
     BrowserModule,
