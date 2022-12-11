@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import {ButtonModule} from 'primeng/button';
 import { Exercicio1Component } from './component/exercicio1/exercicio1.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { Exercicio2Component } from './component/exercicio2/exercicio2.component';
+import {DropdownModule} from 'primeng/dropdown';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { Exercicio3Component } from './component/exercicio3/exercicio3.component';
@@ -45,7 +46,9 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     ButtonModule,
     InputTextModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    DropdownModule,
     NgxMaskModule.forRoot()
   ],
   providers: [],

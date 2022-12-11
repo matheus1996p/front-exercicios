@@ -1,1 +1,57 @@
-<p>veiculos works!</p>
+<div class="header">
+  <h2>Exercício 1 - Cálculo de votos</h2>
+</div>
+<div class="body">
+  <mat-card style="width: 100%;">
+    <form method="post" (ngSubmit)="criar()" [formGroup]="formulario">
+      <div class="row">
+        <div class="form col-md-3">
+          <label for="veiculo">Veiculo <span style="color:rgb(245, 45, 45)">*</span></label>
+          <input type="text" [formControl]="veiculo"  class="form-control" id="veiculo" placeholder="Informe o veiculo">
+          <span *ngIf="veiculo.touched" style="color: rgb(245, 45, 45);">{{getErrorMessageVeiculo()}}</span>
+        </div>
+        <div class="form col-md-3">
+          <label for="veiculo">Marca <span style="color:rgb(245, 45, 45)">*</span></label>
+          <select [formControl]="marca" class="form-control" id="marca" placeholder="Selecione a marca">
+            <option value="" selected>Selecione uma marca</option>
+            <option *ngFor="let marca of marcas" value="marca">{{marca.marca}}</option>
+          </select>
+          <span *ngIf="marca.touched" style="color: rgb(245, 45, 45);">{{getErrorMessageMarca()}}</span>
+        </div>
+        <div class="form col-md-3">
+          <label for="descricao">Descrição <span style="color:rgb(245, 45, 45)">*</span></label>
+          <input type="text" [formControl]="descricao"  class="form-control" id="veiculo" placeholder="Informe a descrição">
+          <span *ngIf="descricao.touched" style="color: rgb(245, 45, 45);">{{getErrorMessageDescricao()}}</span>
+        </div>
+        <div class="form col-md-2">
+          <label for="descricao">Ano <span style="color:rgb(245, 45, 45)">*</span></label>
+          <input type="number" [formControl]="ano"  class="form-control" id="ano" placeholder="Informe o ano">
+          <span *ngIf="ano.touched" style="color: rgb(245, 45, 45);">{{getErrorMessageAno()}}</span>
+        </div>
+        <div class="form col-md-1">
+          <label for="vendido">Vendido <span style="color:rgb(245, 45, 45)">*</span></label>
+          <div class="form-check form-switch">
+            <input [formControl]="vendido" checked class="form-check-input" style="height: 30px; width:60px" type="checkbox">
+            <span *ngIf="vendido.touched" style="color: rgb(245, 45, 45);">{{getErrorMessageVendido()}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+      </div>
+
+      <div class="row">
+        <div align="right">
+         <button style="width: 20%; margin-right: 2%" type="submit" pButton pRipple label="Cadastrar Veículo" class="p-button-raised  p-button-secondary"></button>
+        </div>
+      </div>
+
+    </form>
+
+
+    <div class="row">
+      <button [routerLink]="['']" pButton pRipple type="button" label="Voltar para o Menu" class="p-button-text"></button>
+    </div>
+  </mat-card>
+</div>
