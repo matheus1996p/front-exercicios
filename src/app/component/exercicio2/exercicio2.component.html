@@ -1,0 +1,25 @@
+<div class="header">
+  <h2>Exercício 1</h2>
+</div>
+<div class="body">
+  <mat-card style="width: 50%; left: 25%;">
+    <div class="form form-group">
+      <label for="vetor">Informe o vetor para ser ordenado</label>
+      <input type="text" [(ngModel)]="vetor" [dropSpecialCharacters]="false" mask="0,0,0,0,0,0,0,0" class="form-control" id="vetor" placeholder="Informe o vetor para ser ordenado">
+    </div>
+
+    <div class="buttons row">
+      <div align="center">
+        <button (click)="ordenarVetor()" pButton pRipple type="button" label="Ordenar vetor" class="p-button-raised  p-button-secondary"></button>
+      </div>
+    </div>
+
+    <div class="row" align="center" style="margin-top: 3%">
+        <h2><b>Resultado:</b> <span class="resultado">{{resultado}}</span></h2>
+    </div>
+
+    <div class="row">
+      <button [routerLink]="['']" pButton pRipple type="button" label="Voltar para o Menu" class="p-button-text"></button>
+    </div>
+  </mat-card>
+</div>

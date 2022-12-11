@@ -30,4 +30,10 @@ export class ApiService {
     return this.http.get(`${environment.apiUrl}/exercicio1/votosNulos`, {params: params})
   }
 
+  getVetorOrdenado(vetor: string){
+    let params = new HttpParams()
+        .set('vetor', vetor)
+    return this.http.get(`${environment.apiUrl}/exercicio2/ordenarVetor`, {params: params})
+  }
+
 }

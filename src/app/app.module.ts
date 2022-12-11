@@ -16,13 +16,20 @@ import {AccordionModule} from 'primeng/accordion';
 import {ButtonModule} from 'primeng/button';
 import { Exercicio1Component } from './component/exercicio1/exercicio1.component';
 import {InputTextModule} from 'primeng/inputtext';
+import { Exercicio2Component } from './component/exercicio2/exercicio2.component';
+
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
+
 
 @NgModule({
   declarations: [
     AppComponent,
     VeiculosComponent,
     MenuComponent,
-    Exercicio1Component
+    Exercicio1Component,
+    Exercicio2Component
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,8 @@ import {InputTextModule} from 'primeng/inputtext';
     ButtonModule,
     InputTextModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
