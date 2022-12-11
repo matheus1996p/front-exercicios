@@ -19,7 +19,6 @@ export class Exercicio2Component {
     this.apiService.getVetorOrdenado(this.vetor).subscribe((resultado: any) => {
         this.resultado = resultado;
     })
-    //console.log(this.vetor.split(','));
   }
 
 }

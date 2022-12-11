@@ -36,4 +36,10 @@ export class ApiService {
     return this.http.get(`${environment.apiUrl}/exercicio2/ordenarVetor`, {params: params})
   }
 
+  getFatorial(numero: number){
+    let params = new HttpParams()
+       .set('numero', numero)
+    return this.http.get(`${environment.apiUrl}/exercicio3/calcularFatorial`, {params: params, responseType: 'text'})
+  }
+
 }

@@ -1,16 +1,16 @@
 <div class="header">
-  <h2>Exercício 2 - Ordenação de vetor</h2>
+  <h2>Exercício 3 - Fatorial</h2>
 </div>
 <div class="body">
   <mat-card style="width: 50%; left: 25%;">
     <div class="form form-group">
-      <label for="vetor">Informe o vetor para ser ordenado</label>
-      <input type="text" [(ngModel)]="vetor" [dropSpecialCharacters]="false" mask="0,0,0,0,0,0,0,0" class="form-control" id="vetor" placeholder="Informe o vetor para ser ordenado">
+      <label for="vetor">Informe um numero</label>
+      <input type="number" [(ngModel)]="numero" class="form-control" id="vetor" placeholder="Informe um número">
     </div>
 
     <div class="buttons row">
       <div align="center">
-        <button (click)="ordenarVetor()" pButton pRipple type="button" label="Ordenar vetor" class="p-button-raised  p-button-secondary"></button>
+        <button (click)="calcularFatorial()" pButton pRipple type="button" label="Calcular Fatorial" class="p-button-raised  p-button-secondary"></button>
       </div>
     </div>
 
