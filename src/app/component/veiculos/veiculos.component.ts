@@ -34,6 +34,18 @@ export class VeiculosComponent implements OnInit {
   veiculos1: any[] = [];
   veiculos2: any[] = [];
 
+  naoVendidos: number = 0;
+  vendasFiat: number = 0;
+  vendasFord: number = 0;
+  vendasChevrolet: number = 0;
+  vendasTesla: number = 0;
+  vendasToyota: number = 0;
+  vendasVolkswagen: number = 0;
+
+  criadoUltimaSemana: number = 0;
+
+  filtrarVendidos: boolean = false;
+
   constructor(private apiService: ApiService,
               private formBuilder: FormBuilder) {
       this.formulario = this.formBuilder.group({
@@ -72,7 +84,51 @@ export class VeiculosComponent implements OnInit {
     this.apiService.getVeiculos().subscribe((resultado: any) => {
         this.veiculos = resultado;
         this.formatarData();
+        this.detalhes();
         console.log(this.veiculos);
+    });
+  }
+
+  detalhes(){
+    this.naoVendidos = 0;
+    this.vendasFiat = 0;
+    this.vendasFord = 0;
+    this.vendasChevrolet = 0;
+    this.vendasTesla = 0;
+    this.vendasToyota = 0;
+    this.vendasVolkswagen = 0;
+    this.criadoUltimaSemana = 0;
+
+    let dataAtual = new Date();
+    let ultimaSemana = new Date(dataAtual.setDate(dataAtual.getDate() -7));
+
+    this.veiculos.forEach(item => {
+      let dataCriacao = new Date(item.created);
+
+      if(!item.vendido){
+        this.naoVendidos++;
+      }
+      if(item.marca == 'Fiat'){
+        this.vendasFiat++;
+      }
+      if(item.marca == 'Ford'){
+        this.vendasFord++;
+      }
+      if(item.marca == 'Chevrolet'){
+        this.vendasChevrolet++;
+      }
+      if(item.marca == 'Tesla'){
+        this.vendasTesla++;
+      }
+      if(item.marca == 'Volkswagen'){
+        this.vendasVolkswagen++;
+      }
+      if(item.marca == 'Toyota'){
+        this.vendasToyota++;
+      }
+      if(dataCriacao > ultimaSemana){
+        this.criadoUltimaSemana++;
+      }
     });
   }
 

@@ -20,3 +20,16 @@
 .buttons {
   width:20%;
 }
+
+.filtros {
+  background-color:#f8f9fa;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 2%
+}
+
+.header-detalhes {
+  text-align: center;
+  margin-top: 5px;
+}
+

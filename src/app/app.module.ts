@@ -19,6 +19,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import { Exercicio2Component } from './component/exercicio2/exercicio2.component';
 import {DropdownModule} from 'primeng/dropdown';
 import {TableModule} from 'primeng/table';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -52,7 +53,8 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     HttpClientModule,
     DropdownModule,
     NgxMaskModule.forRoot(),
-    TableModule
+    TableModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
