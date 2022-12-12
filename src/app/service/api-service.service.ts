@@ -1,6 +1,6 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +46,12 @@ export class ApiService {
     let params = new HttpParams()
        .set('numero', numero)
     return this.http.get(`${environment.apiUrl}/exercicio4/calcularSomaMultiplos`, {params: params})
+  }
+
+  setVeiculo(veiculo: any){
+    const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
+    let veiculoJSON = JSON.parse(JSON.stringify(veiculo));
+    return this.http.post(`${environment.apiUrl}/veiculos`, veiculoJSON, {headers});
   }
 
 }

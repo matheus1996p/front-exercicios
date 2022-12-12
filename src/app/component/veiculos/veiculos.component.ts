@@ -51,8 +51,9 @@ export class VeiculosComponent implements OnInit {
   criar(){
     this.isLoading = true;
     if (this.formulario.valid) {
-      console.log('form submitted');
-      console.log(this.formulario);
+      this.apiService.setVeiculo(this.formulario.value).subscribe((resposta: any) =>{
+        console.log(resposta);
+      });
       this.formulario.reset();
       this.formulario.controls['vendido'].setValue(false);
     } else {

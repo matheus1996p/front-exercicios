@@ -14,7 +14,7 @@
           <label for="veiculo">Marca <span style="color:rgb(245, 45, 45)">*</span></label>
           <select [formControl]="marca" class="form-control" id="marca" placeholder="Selecione a marca">
             <option value="" selected>Selecione uma marca</option>
-            <option *ngFor="let marca of marcas" value="marca">{{marca.marca}}</option>
+            <option *ngFor="let item of marcas">{{item.marca}}</option>
           </select>
           <span *ngIf="marca.touched" style="color: rgb(245, 45, 45);">{{getErrorMessageMarca()}}</span>
         </div>
