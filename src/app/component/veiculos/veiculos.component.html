@@ -49,9 +49,112 @@
 
     </form>
 
+    <div style="margin: 3%">
+      <p-table  [value]="veiculos" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width:20%">Veiculo</th>
+                <th style="width:20%">Descricao</th>
+                <th style="width:10%">Marca</th>
+                <th style="width:10%">Vendido</th>
+                <th style="width:10%">Ano</th>
+                <th style="width:10%">Created</th>
+                <th style="width:10%">Updated</th>
+                <th style="width:5%"></th>
+                <th style="width:5%"></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-veiculo let-editing="editing" let-ri="rowIndex">
+            <tr [pEditableRow]="veiculo">
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="veiculo.veiculo">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{veiculo.veiculo}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="veiculo.descricao" required>
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{veiculo.descricao}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                    <p-cellEditor>
+                      <ng-template pTemplate="input">
+                        <select [(ngModel)]="veiculo.marca" class="form-control" id="marca" placeholder="Selecione a marca">
+                          <option *ngFor="let item of marcas">{{item.marca}}</option>
+                        </select>
+                      </ng-template>
+                      <ng-template pTemplate="output">
+                        <select [(ngModel)]="veiculo.marca" class="form-control" id="marca" placeholder="Selecione a marca">
+                          <option *ngFor="let item of marcas">{{item.marca}}</option>
+                        </select>
+                      </ng-template>
+
+                    </p-cellEditor>
+                </td>
+                <td>
+                  <div align="center" style="margin-right: 40%;">
+                    <input [(ngModel)]="veiculo.vendido" class="form-check-input" style="height: 20px; width:30px" type="checkbox">
+                  </div>
+                </td>
+                <td>
+                    <p-cellEditor>
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="veiculo.ano">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{veiculo.ano}}
+                        </ng-template>
+                    </p-cellEditor>
+                </td>
+                <td>
+                  <p-cellEditor>
+                      <ng-template pTemplate="input">
+                          <input [disabled]="true" pInputText type="text" [(ngModel)]="veiculo.created">
+                      </ng-template>
+                      <ng-template pTemplate="output">
+                          {{veiculo.created}}
+                      </ng-template>
+                  </p-cellEditor>
+                </td>
+                <td>
+                  <p-cellEditor>
+                      <ng-template pTemplate="input">
+                          <input [disabled]="true" pInputText type="text" [(ngModel)]="veiculo.updated">
+                      </ng-template>
+                      <ng-template pTemplate="output">
+                          {{veiculo.updated}}
+                      </ng-template>
+                  </p-cellEditor>
+                </td>
+                <td>
+                    <div class="flex align-items-center justify-content-center gap-2">
+                        <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(veiculo)" class="p-button-rounded p-button-text"></button>
+                        <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(veiculo)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+                        <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(veiculo, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                    </div>
+                </td>
+                <td>
+                  <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-trash" (click)="deletaVeiculo(veiculo)" class="p-button-rounded p-button-text p-button-danger"></button>
+                </td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </div>
 
     <div class="row">
       <button [routerLink]="['']" pButton pRipple type="button" label="Voltar para o Menu" class="p-button-text"></button>
     </div>
   </mat-card>
+
+
 </div>

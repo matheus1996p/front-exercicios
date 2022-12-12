@@ -54,4 +54,18 @@ export class ApiService {
     return this.http.post(`${environment.apiUrl}/veiculos`, veiculoJSON, {headers});
   }
 
+  getVeiculos(){
+    return this.http.get(`${environment.apiUrl}/veiculos`);
+  }
+
+  atualizaVeiculo(veiculo: any, id: number){
+    const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
+    let veiculoJSON = JSON.parse(JSON.stringify(veiculo));
+    return this.http.put(`${environment.apiUrl}/veiculos/${id}`, veiculoJSON, {headers})
+  }
+
+  deletaVeiculo(id: number){
+    return this.http.delete(`${environment.apiUrl}/veiculos/${id}`);
+  }
+
 }

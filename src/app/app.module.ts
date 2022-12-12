@@ -18,6 +18,8 @@ import { Exercicio1Component } from './component/exercicio1/exercicio1.component
 import {InputTextModule} from 'primeng/inputtext';
 import { Exercicio2Component } from './component/exercicio2/exercicio2.component';
 import {DropdownModule} from 'primeng/dropdown';
+import {TableModule} from 'primeng/table';
+
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { Exercicio3Component } from './component/exercicio3/exercicio3.component';
@@ -49,7 +51,8 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     ReactiveFormsModule,
     HttpClientModule,
     DropdownModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { ApiService } from './../../service/api-service.service';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
+
 interface Marca {
   marca: string,
   imagePath: string
@@ -28,6 +29,11 @@ export class VeiculosComponent implements OnInit {
   marcas: Marca[];
   selectedMarca?: Marca;
 
+  veiculos: any[] = [];
+  clonedVeiculos: { [s: string]: any; } = {};
+  veiculos1: any[] = [];
+  veiculos2: any[] = [];
+
   constructor(private apiService: ApiService,
               private formBuilder: FormBuilder) {
       this.formulario = this.formBuilder.group({
@@ -45,14 +51,14 @@ export class VeiculosComponent implements OnInit {
   }
 
   ngOnInit(){
-
+    this.carregarVeiculos();
   }
 
   criar(){
     this.isLoading = true;
     if (this.formulario.valid) {
       this.apiService.setVeiculo(this.formulario.value).subscribe((resposta: any) =>{
-        console.log(resposta);
+        this.carregarVeiculos();
       });
       this.formulario.reset();
       this.formulario.controls['vendido'].setValue(false);
@@ -62,6 +68,20 @@ export class VeiculosComponent implements OnInit {
 
   }
 
+  carregarVeiculos(){
+    this.apiService.getVeiculos().subscribe((resultado: any) => {
+        this.veiculos = resultado;
+        this.formatarData();
+        console.log(this.veiculos);
+    });
+  }
+
+  formatarData(){
+    this.veiculos.forEach((item: any) =>{
+        item.created = new Date(item.created).toLocaleDateString();
+        item.updated = new Date(item.updated).toLocaleDateString();
+    })
+  }
 
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
@@ -92,6 +112,37 @@ export class VeiculosComponent implements OnInit {
 
   getErrorMessageMarca() {
     return this.marca.hasError('required') ? 'O campo Marca é obrigatório.' : '';
+  }
+
+  onRowEditInit(veiculo: any) {
+    this.clonedVeiculos[veiculo.id] = {...veiculo};
+  }
+
+  onRowEditSave(item: any) {
+    let veiculo: any = {};
+
+    veiculo.veiculo = item.veiculo;
+    veiculo.marca = item.marca;
+    veiculo.ano = item.ano;
+    veiculo.descricao = item.descricao;
+    veiculo.vendido = item.vendido;
+
+    this.apiService.atualizaVeiculo(veiculo, item.id).subscribe((respostas) =>{
+      console.log(respostas);
+      this.carregarVeiculos();
+    })
+
+  }
+
+  onRowEditCancel(veiculo: any, index: number) {
+    this.veiculos2[index] = this.clonedVeiculos[veiculo.id];
+    delete this.clonedVeiculos[veiculo.id];
+  }
+
+  deletaVeiculo(veiculo: any){
+    this.apiService.deletaVeiculo(veiculo.id).subscribe((retorno: any) => {
+      this.carregarVeiculos();
+    })
   }
 
 }
